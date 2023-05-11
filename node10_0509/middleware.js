@@ -17,7 +17,20 @@ app.use(bodyParser.urlencoded({extended:false}))
 //body-parser를 이요해 application.json 파싱
 app.use(bodyParser.json())
 
+//이렇게 경로 접근 가능
+
+//요청하는 파일이 없으면 알아서 next를 호출해 다음 미들웨어로 넘어감
+//파일을 발견했다면 다음 미들웨어는 실행되지 않음
+//지정한 폴더에 있는 내용을 모두 웹 서버 루트 폴더에 올림.
+
+// app.use('요청 경로', express.static('실제경로'));
+// app.use('/', express.static(path.join(__dirname, 'public)));
 app.use('/public', static(path.join(__dirname, 'public')));
+
+//컨텐츠 요청 주소와 실제 컨텐츠의 경로를 다르게 만들 수 있음
+//요청 주소 localhost:3000/stylesheets/style.css
+//실제 컨텐츠 경로 /public/stulesheets/style.css
+//서버의 구조를 파악하기 어려워져서 보안에 도움이 됨
 
 //라우터 사용하여 라우팅 함수 등록
 var router = express.Router();
