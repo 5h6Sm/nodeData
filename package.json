@@ -5,8 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "async": "^3.2.4",
+    "cookie-parser": "^1.4.6",
     "ejs": "^2.7.4",
+    "errorhandler": "^1.5.1",
     "express": "^4.18.2",
+    "express-error-handler": "^1.1.0",
     "morgan": "^1.10.0",
     "request": "^2.88.2"
   },
