@@ -61,7 +61,7 @@ router.route('getcookie').get(function(req, res) {
 // 404 에러페이지 처리
 var errorHandler = expressErrorHandler({
     static: {
-        '404': './public/404.html'
+        '404': 'bodyparser/public/404.html'
     }
 });
 
